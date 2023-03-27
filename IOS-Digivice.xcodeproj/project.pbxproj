@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0070CFC29D1C853006893C2 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0070CFB29D1C853006893C2 /* FavoriteView.swift */; };
+		D0070CFF29D1D221006893C2 /* DigimonValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0070CFE29D1D221006893C2 /* DigimonValues.swift */; };
 		D638C86829CAFC84003A3628 /* IOS_DigiviceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */; };
-		D638C86A29CAFC84003A3628 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C86929CAFC84003A3628 /* ContentView.swift */; };
 		D638C86C29CAFC85003A3628 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D638C86B29CAFC85003A3628 /* Assets.xcassets */; };
 		D638C87029CAFC85003A3628 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D638C86F29CAFC85003A3628 /* Preview Assets.xcassets */; };
 		D638C87A29CAFC85003A3628 /* IOS_DigiviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C87929CAFC85003A3628 /* IOS_DigiviceTests.swift */; };
@@ -36,9 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D0070CFB29D1C853006893C2 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		D0070CFE29D1D221006893C2 /* DigimonValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigimonValues.swift; sourceTree = "<group>"; };
 		D638C86429CAFC84003A3628 /* IOS-Digivice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-Digivice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_DigiviceApp.swift; sourceTree = "<group>"; };
-		D638C86929CAFC84003A3628 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D638C86B29CAFC85003A3628 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D638C86D29CAFC85003A3628 /* IOS_Digivice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IOS_Digivice.entitlements; sourceTree = "<group>"; };
 		D638C86F29CAFC85003A3628 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -76,6 +78,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0070CFD29D1D202006893C2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D0070CFE29D1D221006893C2 /* DigimonValues.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		D0070D0029D1D313006893C2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D638C86D29CAFC85003A3628 /* IOS_Digivice.entitlements */,
+				D638C86B29CAFC85003A3628 /* Assets.xcassets */,
+				D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		D638C85B29CAFC84003A3628 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +119,12 @@
 		D638C86629CAFC84003A3628 /* IOS-Digivice */ = {
 			isa = PBXGroup;
 			children = (
-				D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */,
-				D638C86929CAFC84003A3628 /* ContentView.swift */,
-				D638C86B29CAFC85003A3628 /* Assets.xcassets */,
-				D638C86D29CAFC85003A3628 /* IOS_Digivice.entitlements */,
-				D638C86E29CAFC85003A3628 /* Preview Content */,
+				D0070D0029D1D313006893C2 /* Resources */,
 				D638C89229CB0725003A3628 /* DigimonAPI.swift */,
 				D638C89429CB0A57003A3628 /* HomeView.swift */,
+				D0070CFB29D1C853006893C2 /* FavoriteView.swift */,
+				D0070CFD29D1D202006893C2 /* Components */,
+				D638C86E29CAFC85003A3628 /* Preview Content */,
 			);
 			path = "IOS-Digivice";
 			sourceTree = "<group>";
@@ -265,10 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D638C86A29CAFC84003A3628 /* ContentView.swift in Sources */,
 				D638C89529CB0A57003A3628 /* HomeView.swift in Sources */,
 				D638C89329CB0725003A3628 /* DigimonAPI.swift in Sources */,
+				D0070CFC29D1C853006893C2 /* FavoriteView.swift in Sources */,
 				D638C86829CAFC84003A3628 /* IOS_DigiviceApp.swift in Sources */,
+				D0070CFF29D1D221006893C2 /* DigimonValues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

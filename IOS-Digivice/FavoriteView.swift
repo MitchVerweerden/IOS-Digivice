@@ -1,27 +1,20 @@
+
+
 import SwiftUI
 
-struct HomeView: View {
-    @State var digimonList: [DigimonData]?
+struct FavoriteView: View {
+    @State var digimon: DigimonFullData?
     var body: some View {
-        NavigationView{
-            VStack {
-                ForEach(digimonList ?? [], id: \DigimonData.id) {digimon in
-                    Text(digimon.name)
-                }
-                NavigationLink(destination: FavoriteView()){
-                    Text("Favorite")
-                }
-            }.onAppear(perform: loadData)
-         
-        }
-   
+      
+        VStack{
+            Text(digimon?.name ?? "Leeg")
+        }.onAppear(perform: loadData)
+       
     }
-    
     func loadData() {
-        var digimonList: DigimonList?
-        let randomInt = Int.random(in: 1..<5)
+        var newDigimon: DigimonFullData?
         
-        guard let url = URL(string: "https://www.digi-api.com/api/v1/digimon?page=\(randomInt)&pageSize=10")
+        guard let url = URL(string: "https://digimon-api.com/api/v1/digimon/1")
         else {
             print("Error: failed to construct a URL from string")
             return
@@ -38,28 +31,24 @@ struct HomeView: View {
                 return
             }
             do {
-                digimonList = try
-                JSONDecoder().decode(DigimonList.self, from: data)
+                newDigimon = try
+                JSONDecoder().decode(DigimonFullData.self, from: data)
             } catch let error as NSError {
                 print("Error: decoding. In domain= \(error.domain), description= \(error.localizedDescription)")
             }
-            if digimonList == nil {
+            if newDigimon == nil {
                 print("Error: failed to read or decode data.")
             }
             DispatchQueue.main.async {
-                self.digimonList = digimonList?.content
+                self.digimon = newDigimon
             }
         }
         task.resume()
     }
-    
-    func getDigimonName(digimonData: DigimonData) -> String {
-        return digimonData.name
-    }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct FavoriteView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        FavoriteView()
     }
 }
