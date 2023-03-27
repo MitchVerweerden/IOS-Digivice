@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0ABBD0429D19FBA00AA0E5D /* PixelDigivolve.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0ABBD0329D19FBA00AA0E5D /* PixelDigivolve.otf */; };
+		D0ABBD0629D19FC100AA0E5D /* PixelDigivolveItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0ABBD0529D19FC100AA0E5D /* PixelDigivolveItalic.otf */; };
 		D0BDC0C429CB06F5006D0D2E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BDC0C329CB06F5006D0D2E /* HomeView.swift */; };
-		D0BDC0CE29CB0F1F006D0D2E /* pixel-digivolve-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0BDC0CB29CB0DC5006D0D2E /* pixel-digivolve-italic.ttf */; };
-		D0BDC0CF29CB0F23006D0D2E /* pixel-digivolve.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0BDC0CC29CB0DC8006D0D2E /* pixel-digivolve.ttf */; };
 		D638C86829CAFC84003A3628 /* IOS_DigiviceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */; };
 		D638C86A29CAFC84003A3628 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C86929CAFC84003A3628 /* SplashView.swift */; };
 		D638C86C29CAFC85003A3628 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D638C86B29CAFC85003A3628 /* Assets.xcassets */; };
@@ -37,10 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D0ABBD0329D19FBA00AA0E5D /* PixelDigivolve.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PixelDigivolve.otf; sourceTree = "<group>"; };
+		D0ABBD0529D19FC100AA0E5D /* PixelDigivolveItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PixelDigivolveItalic.otf; sourceTree = "<group>"; };
 		D0BDC0C329CB06F5006D0D2E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		D0BDC0CA29CB0D47006D0D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		D0BDC0CB29CB0DC5006D0D2E /* pixel-digivolve-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pixel-digivolve-italic.ttf"; sourceTree = "<group>"; };
-		D0BDC0CC29CB0DC8006D0D2E /* pixel-digivolve.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pixel-digivolve.ttf"; sourceTree = "<group>"; };
 		D638C86429CAFC84003A3628 /* IOS-Digivice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-Digivice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_DigiviceApp.swift; sourceTree = "<group>"; };
 		D638C86929CAFC84003A3628 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -82,8 +81,8 @@
 		D0BDC0C229CB062C006D0D2E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				D0BDC0CB29CB0DC5006D0D2E /* pixel-digivolve-italic.ttf */,
-				D0BDC0CC29CB0DC8006D0D2E /* pixel-digivolve.ttf */,
+				D0ABBD0329D19FBA00AA0E5D /* PixelDigivolve.otf */,
+				D0ABBD0529D19FC100AA0E5D /* PixelDigivolveItalic.otf */,
 				D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */,
 				D638C86B29CAFC85003A3628 /* Assets.xcassets */,
 				D638C86D29CAFC85003A3628 /* IOS_Digivice.entitlements */,
@@ -114,7 +113,6 @@
 		D638C86629CAFC84003A3628 /* IOS-Digivice */ = {
 			isa = PBXGroup;
 			children = (
-				D0BDC0CA29CB0D47006D0D2E /* Info.plist */,
 				D638C86929CAFC84003A3628 /* SplashView.swift */,
 				D0BDC0C329CB06F5006D0D2E /* HomeView.swift */,
 				D0BDC0C229CB062C006D0D2E /* Resource */,
@@ -253,9 +251,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D638C87029CAFC85003A3628 /* Preview Assets.xcassets in Resources */,
-				D0BDC0CE29CB0F1F006D0D2E /* pixel-digivolve-italic.ttf in Resources */,
+				D0ABBD0429D19FBA00AA0E5D /* PixelDigivolve.otf in Resources */,
+				D0ABBD0629D19FC100AA0E5D /* PixelDigivolveItalic.otf in Resources */,
 				D638C86C29CAFC85003A3628 /* Assets.xcassets in Resources */,
-				D0BDC0CF29CB0F23006D0D2E /* pixel-digivolve.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +451,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Avans.IOS-Digivice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -490,7 +488,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Avans.IOS-Digivice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
