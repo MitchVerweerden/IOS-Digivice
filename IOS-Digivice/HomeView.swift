@@ -1,23 +1,18 @@
-//
-//  HomeView.swift
-//  IOS-Digivice
-//
-//  Created by Mitchell Verweerden on 22/03/2023.
-//
-
 import SwiftUI
 
 struct HomeView: View {
-    @State var digimonData: DigimonData?
+    @State var digimonList: [DigimonData]?
     var body: some View {
         VStack {
-            Text(getDigimonName())
+            ForEach(digimonList ?? [], id: \DigimonData.id) {digimon in
+                Text(digimon.name)
+            }
         }.onAppear(perform: loadData)
     }
     
     func loadData() {
-        var newDigimonData: DigimonData?
-        guard let url = URL(string: "https://www.digi-api.com/api/v1/digimon/agumon")
+        var digimonList: DigimonList?
+        guard let url = URL(string: "https://www.digi-api.com/api/v1/digimon?page=0")
         else {
             print("Error: failed to construct a URL from string")
             return
@@ -34,23 +29,23 @@ struct HomeView: View {
                 return
             }
             do {
-                newDigimonData = try
-                JSONDecoder().decode(DigimonData.self, from: data)
+                digimonList = try
+                JSONDecoder().decode(DigimonList.self, from: data)
             } catch let error as NSError {
                 print("Error: decoding. In domain= \(error.domain), description= \(error.localizedDescription)")
             }
-            if newDigimonData == nil {
+            if digimonList == nil {
                 print("Error: failed to read or decode data.")
             }
             DispatchQueue.main.async {
-                self.digimonData = newDigimonData
+                self.digimonList = digimonList?.content
             }
         }
         task.resume()
     }
     
-    func getDigimonName() -> String {
-        return digimonData?.name ?? "niks lol"
+    func getDigimonName(digimonData: DigimonData) -> String {
+        return digimonData.name
     }
 }
 
