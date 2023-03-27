@@ -16,6 +16,7 @@
 		D638C88629CAFC85003A3628 /* IOS_DigiviceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C88529CAFC85003A3628 /* IOS_DigiviceUITestsLaunchTests.swift */; };
 		D638C89329CB0725003A3628 /* DigimonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C89229CB0725003A3628 /* DigimonAPI.swift */; };
 		D638C89529CB0A57003A3628 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C89429CB0A57003A3628 /* HomeView.swift */; };
+		D67DD17529D1C59B00ADF5F8 /* DigimonListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DD17429D1C59B00ADF5F8 /* DigimonListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D638C88529CAFC85003A3628 /* IOS_DigiviceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_DigiviceUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D638C89229CB0725003A3628 /* DigimonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigimonAPI.swift; sourceTree = "<group>"; };
 		D638C89429CB0A57003A3628 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D67DD17429D1C59B00ADF5F8 /* DigimonListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigimonListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		D638C86629CAFC84003A3628 /* IOS-Digivice */ = {
 			isa = PBXGroup;
 			children = (
+				D67DD17229D1C57000ADF5F8 /* View */,
 				D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */,
 				D638C86929CAFC84003A3628 /* ContentView.swift */,
 				D638C86B29CAFC85003A3628 /* Assets.xcassets */,
@@ -133,6 +136,22 @@
 				D638C88529CAFC85003A3628 /* IOS_DigiviceUITestsLaunchTests.swift */,
 			);
 			path = "IOS-DigiviceUITests";
+			sourceTree = "<group>";
+		};
+		D67DD17229D1C57000ADF5F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D67DD17329D1C58600ADF5F8 /* Component */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D67DD17329D1C58600ADF5F8 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				D67DD17429D1C59B00ADF5F8 /* DigimonListItem.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D67DD17529D1C59B00ADF5F8 /* DigimonListItem.swift in Sources */,
 				D638C86A29CAFC84003A3628 /* ContentView.swift in Sources */,
 				D638C89529CB0A57003A3628 /* HomeView.swift in Sources */,
 				D638C89329CB0725003A3628 /* DigimonAPI.swift in Sources */,

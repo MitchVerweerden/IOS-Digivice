@@ -3,9 +3,13 @@ import SwiftUI
 struct HomeView: View {
     @State var digimonList: [DigimonData]?
     var body: some View {
-        VStack {
-            ForEach(digimonList ?? [], id: \DigimonData.id) {digimon in
-                Text(digimon.name)
+        NavigationView {
+            List {
+                ForEach(digimonList ?? [], id: \DigimonData.id) {digimon in
+                    NavigationLink(destination: DigimonListItem(digimon: digimon)) {
+                        DigimonListItem(digimon: digimon)
+                    }
+                }
             }
         }.onAppear(perform: loadData)
     }
