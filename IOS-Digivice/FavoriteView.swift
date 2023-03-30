@@ -86,7 +86,7 @@ struct FavoriteView: View {
             }
         }
         task.resume()
-        
+        self.buttonText = "Train"
     }
     
     struct FavoriteView_Previews: PreviewProvider {
