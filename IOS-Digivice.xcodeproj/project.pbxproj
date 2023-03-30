@@ -17,6 +17,7 @@
 		D638C89329CB0725003A3628 /* DigimonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C89229CB0725003A3628 /* DigimonAPI.swift */; };
 		D638C89529CB0A57003A3628 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C89429CB0A57003A3628 /* HomeView.swift */; };
 		D67DD17529D1C59B00ADF5F8 /* DigimonListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DD17429D1C59B00ADF5F8 /* DigimonListItem.swift */; };
+		D6D0287C29D5754A00A27E00 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0287B29D5754A00A27E00 /* SplashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D638C89229CB0725003A3628 /* DigimonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigimonAPI.swift; sourceTree = "<group>"; };
 		D638C89429CB0A57003A3628 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D67DD17429D1C59B00ADF5F8 /* DigimonListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigimonListItem.swift; sourceTree = "<group>"; };
+		D6D0287B29D5754A00A27E00 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				D638C86E29CAFC85003A3628 /* Preview Content */,
 				D638C89229CB0725003A3628 /* DigimonAPI.swift */,
 				D638C89429CB0A57003A3628 /* HomeView.swift */,
+				D6D0287B29D5754A00A27E00 /* SplashView.swift */,
 			);
 			path = "IOS-Digivice";
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6D0287C29D5754A00A27E00 /* SplashView.swift in Sources */,
 				D67DD17529D1C59B00ADF5F8 /* DigimonListItem.swift in Sources */,
 				D638C86A29CAFC84003A3628 /* ContentView.swift in Sources */,
 				D638C89529CB0A57003A3628 /* HomeView.swift in Sources */,
