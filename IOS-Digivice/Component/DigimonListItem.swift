@@ -9,7 +9,7 @@ struct DigimonListItem: View {
             } placeholder: {
                 ProgressView()
             }
-            .frame(width: 50, height: 50)
+            .frame(width: 100, height: 100)
             
             Text(digimon.name)
         }

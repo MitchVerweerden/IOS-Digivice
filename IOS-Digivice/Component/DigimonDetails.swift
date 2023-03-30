@@ -12,7 +12,7 @@ struct DigimonDetails: View {
         .clipShape(Circle())
         .overlay(
             Circle().stroke(
-                .white,
+                .green,
                 lineWidth: 4))
         .shadow(radius: 7)
         .frame(width: 200, height: 200)

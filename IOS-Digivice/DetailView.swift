@@ -4,15 +4,21 @@ struct DetailView: View {
     @State var digimonId: Int
     @State var details: DigimonFullData?
     var body: some View {
-        VStack {
-            DigimonDetails(details: details)
-            TabView {
-                DescriptionView(details: details)
-                    .tabItem{
-                        Label("Description", systemImage: "books.vertical")
-                    }
-            }
-        }.onAppear(perform: loadData)
+        ZStack {
+            VStack {
+                DigimonDetails(details: details)
+                TabView {
+                    DescriptionView(details: details)
+                        .tabItem{
+                            Label("Description", systemImage: "books.vertical")
+                        }
+                    DescriptionButtonView(details: details)
+                        .tabItem{
+                            Label("Actions", systemImage: "exclamationmark")
+                        }
+                }
+            }.onAppear(perform: loadData)
+        }
     }
     
     func loadData() {

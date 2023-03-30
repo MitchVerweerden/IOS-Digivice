@@ -10,7 +10,11 @@ import SwiftUI
 struct DescriptionView: View {
     var details: DigimonFullData?
     var body: some View {
-        Text(getDigimonDescription())
+        ScrollView {
+            Text(getDigimonDescription())
+                .padding([.horizontal, .top], 15)
+        }
+        .border(Color.green, width: 2)
     }
     
     
