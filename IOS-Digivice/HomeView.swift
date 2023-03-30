@@ -3,6 +3,7 @@ import SwiftUI
 struct HomeView: View {
     @State var digimonList: [DigimonData]?
     let favoriteKey = "favorite"
+    let expKey = "exp"
     var body: some View {
         NavigationView {
             List {
@@ -83,8 +84,11 @@ struct HomeView: View {
             }
             DispatchQueue.main.async {
                 //sla op in defaults
-                if let encoded = try? JSONEncoder().encode(newDigimon) {
-                    UserDefaults.standard.set(encoded, forKey: favoriteKey)
+                if let encodedDigimon = try? JSONEncoder().encode(newDigimon) {
+                    UserDefaults.standard.set(encodedDigimon, forKey: favoriteKey)
+                }
+                if let encodedExp = try? JSONEncoder().encode(0.0) {
+                    UserDefaults.standard.set(encodedExp, forKey: expKey)
                 }
             }
         }
