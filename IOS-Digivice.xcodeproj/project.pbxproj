@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D0FAE3F429D59CEC00B7F01C /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAE3F329D59CEC00B7F01C /* FavoriteView.swift */; };
 		D0FAE3F629D5AA3C00B7F01C /* ExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAE3F529D5AA3C00B7F01C /* ExperienceView.swift */; };
+		D0FAE3F829D5CCFB00B7F01C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAE3F729D5CCFB00B7F01C /* ContentView.swift */; };
 		D638C86829CAFC84003A3628 /* IOS_DigiviceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */; };
 		D638C86C29CAFC85003A3628 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D638C86B29CAFC85003A3628 /* Assets.xcassets */; };
 		D638C87029CAFC85003A3628 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D638C86F29CAFC85003A3628 /* Preview Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		D0FAE3F329D59CEC00B7F01C /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		D0FAE3F529D5AA3C00B7F01C /* ExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceView.swift; sourceTree = "<group>"; };
+		D0FAE3F729D5CCFB00B7F01C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D638C86429CAFC84003A3628 /* IOS-Digivice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-Digivice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_DigiviceApp.swift; sourceTree = "<group>"; };
 		D638C86B29CAFC85003A3628 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				D638C89429CB0A57003A3628 /* HomeView.swift */,
 				D6D0287B29D5754A00A27E00 /* SplashView.swift */,
 				D0FAE3F329D59CEC00B7F01C /* FavoriteView.swift */,
+				D0FAE3F729D5CCFB00B7F01C /* ContentView.swift */,
 			);
 			path = "IOS-Digivice";
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			files = (
 				D6D0287C29D5754A00A27E00 /* SplashView.swift in Sources */,
 				D67DD17529D1C59B00ADF5F8 /* DigimonListItem.swift in Sources */,
+				D0FAE3F829D5CCFB00B7F01C /* ContentView.swift in Sources */,
 				D638C89529CB0A57003A3628 /* HomeView.swift in Sources */,
 				D638C89329CB0725003A3628 /* DigimonAPI.swift in Sources */,
 				D0FAE3F429D59CEC00B7F01C /* FavoriteView.swift in Sources */,
