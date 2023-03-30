@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State var digimonList: [DigimonData]?
+    let favoriteKey = "favorite"
     var body: some View {
         NavigationView {
             List {
@@ -9,6 +10,12 @@ struct HomeView: View {
                     NavigationLink(destination: DigimonListItem(digimon: digimon)) {
                         DigimonListItem(digimon: digimon)
                     }
+                    Button("Favorite"){
+                        setFavoriteDigimon(digimonId: digimon.id)
+                    }
+                }
+                NavigationLink(destination: FavoriteView()){
+                    Text("Favorite")
                 }
             }
         }.onAppear(perform: loadData)
@@ -47,7 +54,42 @@ struct HomeView: View {
         }
         task.resume()
     }
-    
+    func setFavoriteDigimon(digimonId: Int){
+        var newDigimon: DigimonFullData?
+        guard let url = URL(string: "https://digimon-api.com/api/v1/digimon/\(digimonId)")
+        else {
+            print("Error: failed to construct a URL from string")
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) {data,
+            response, error in
+            if let error = error {
+                print("Error: Fetch failed: \(error.localizedDescription)")
+                return
+            }
+            guard let data = data else {
+                print("Error: failed to get data from URLSession")
+                return
+            }
+            do {
+                newDigimon = try
+                JSONDecoder().decode(DigimonFullData.self, from: data)
+            } catch let error as NSError {
+                print("Error: decoding. In domain= \(error.domain), description= \(error.localizedDescription)")
+            }
+            if newDigimon == nil {
+                print("Error: failed to read or decode data.")
+            }
+            DispatchQueue.main.async {
+                //sla op in defaults
+                if let encoded = try? JSONEncoder().encode(newDigimon) {
+                    UserDefaults.standard.set(encoded, forKey: favoriteKey)
+                }
+            }
+        }
+        task.resume()
+    }
     func getDigimonName(digimonData: DigimonData) -> String {
         return digimonData.name
     }
