@@ -1,28 +1,29 @@
 import SwiftUI
 
-struct HomeView: View {
-    @State var digimonList: [DigimonData]?
+struct DetailView: View {
+    @State var digimonId: Int
+    @State var details: DigimonFullData?
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(digimonList ?? [], id: \DigimonData.id) {digimon in
-                    NavigationLink(destination: DetailView(digimonId: digimon.id)) {
-                        DigimonListItem(digimon: digimon)
+        VStack {
+            DigimonDetails(details: details)
+            TabView {
+                DescriptionView(details: details)
+                    .tabItem{
+                        Label("Description", systemImage: "books.vertical")
                     }
-                }
             }
         }.onAppear(perform: loadData)
     }
     
     func loadData() {
-        var digimonList: DigimonList?
-        guard let url = URL(string: "https://www.digi-api.com/api/v1/digimon?page=0")
+        var newDetails: DigimonFullData?
+        guard let url = URL(string: "https://www.digi-api.com/api/v1/digimon/" + String(digimonId))
         else {
             print("Error: failed to construct a URL from string")
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) {data,
+        let task = URLSession.shared.dataTask(with: url) {data ,
             response, error in
             if let error = error {
                 print("Error: Fetch failed: \(error.localizedDescription)")
@@ -33,28 +34,24 @@ struct HomeView: View {
                 return
             }
             do {
-                digimonList = try
-                JSONDecoder().decode(DigimonList.self, from: data)
+                newDetails = try
+                JSONDecoder().decode(DigimonFullData?.self, from: data)
             } catch let error as NSError {
                 print("Error: decoding. In domain= \(error.domain), description= \(error.localizedDescription)")
             }
-            if digimonList == nil {
+            if newDetails == nil {
                 print("Error: failed to read or decode data.")
             }
             DispatchQueue.main.async {
-                self.digimonList = digimonList?.content
+                self.details = newDetails
             }
         }
         task.resume()
     }
-    
-    func getDigimonName(digimonData: DigimonData) -> String {
-        return digimonData.name
-    }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        DetailView(digimonId: 4)
     }
 }
