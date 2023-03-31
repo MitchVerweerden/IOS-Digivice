@@ -62,6 +62,7 @@ struct FavoriteView: View {
     }
     func trainDigimon() {
         if(self.progressValue < 1){
+            
             for _ in 0...10 {
                 self.progressValue += 0.020
             }
@@ -76,7 +77,9 @@ struct FavoriteView: View {
             if let hasNoNextEvolutions = digimon?.nextEvolutions.isEmpty, hasNoNextEvolutions {
                 digivolveAlert = true
             } else {
-                digivolve(digimonId: self.digimon?.nextEvolutions[0].id ?? 1)
+                guard let evolutionsLength = self.digimon?.nextEvolutions.count else { return  }
+                let randomInt = Int.random(in: 0..<evolutionsLength)
+                digivolve(digimonId: self.digimon?.nextEvolutions[randomInt].id ?? 1)
             }
             
         }
