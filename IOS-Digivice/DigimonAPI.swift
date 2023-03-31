@@ -44,5 +44,7 @@ struct Description: Codable{
 
 struct Evolution: Codable{
     var id: Int?
+    var digimon: String
+    var image: String
 }
 

@@ -4,8 +4,9 @@ struct FavoriteView: View {
     @State var digimon: DigimonFullData?
     @State var progressValue: Float = 0.0
     @State var buttonText: String = "Train Digimon"
-    @State private var showAlert = false
-    @State var isShowingSheet = false
+    @State private var digivolveAlert = false
+    @State private var editAlert = false
+    @State var name: String = ""
     let favoriteKey = "favorite"
     let expKey = "exp"
     var body: some View {
@@ -24,14 +25,26 @@ struct FavoriteView: View {
                     }) {
                         Text(buttonText)
                     }.padding()
+                    Button("Edit Name") {
+                        editAlert = true
+                    }
+                    .alert("Edit Name", isPresented: $editAlert, actions: {
+                        TextField("Name", text: $name)
+                        Button("Save", action: {
+                            saveChanges()
+                        })
+                    }, message: {
+                        Text("Fill in the new name")
+                    })
                 }
-                .alert(isPresented: $showAlert,
+                .alert(isPresented: $digivolveAlert,
                        content:{Alert(title:Text("Digimon can't digivolve"))})
                 .tabItem{
-                    Label("Train", systemImage: "network")
+                    Label("Actions", systemImage: "network")
                 }
+                
             }
-        
+            
         }
         .padding()
         .onAppear(perform: loadData)
@@ -61,13 +74,13 @@ struct FavoriteView: View {
             
         }else{
             if let hasNoNextEvolutions = digimon?.nextEvolutions.isEmpty, hasNoNextEvolutions {
-                showAlert = true
+                digivolveAlert = true
             } else {
                 digivolve(digimonId: self.digimon?.nextEvolutions[0].id ?? 1)
             }
-        
+            
         }
-      
+        
     }
     func digivolve(digimonId: Int){
         var newDigimon: DigimonFullData?
@@ -88,8 +101,6 @@ struct FavoriteView: View {
                 return
             }
             do {
-                let jsonString = String(data: data, encoding: .utf8)
-                print("Raw JSON string: \(jsonString ?? "")")
                 newDigimon = try
                 JSONDecoder().decode(DigimonFullData.self, from: data)
             } catch let error as NSError {
@@ -112,10 +123,11 @@ struct FavoriteView: View {
         task.resume()
         self.buttonText = "Train"
     }
-    
-    struct FavoriteView_Previews: PreviewProvider {
-        static var previews: some View {
-            FavoriteView()
+    func saveChanges(){
+        self.digimon?.name = name
+        if let encodedDigimon = try? JSONEncoder().encode(self.digimon) {
+            UserDefaults.standard.set(encodedDigimon, forKey: favoriteKey)
         }
     }
+    
 }

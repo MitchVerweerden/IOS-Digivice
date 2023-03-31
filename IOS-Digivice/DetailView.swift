@@ -22,9 +22,8 @@ struct DetailView: View {
     }
     
     func loadData() {
-       // + String(digimonId)
         var newDetails: DigimonFullData?
-        guard let url = URL(string: "https://www.digi-api.com/api/v1/digimon/875" )
+        guard let url = URL(string: "https://www.digi-api.com/api/v1/digimon/" + String(digimonId) )
         else {
             print("Error: failed to construct a URL from string")
             return
