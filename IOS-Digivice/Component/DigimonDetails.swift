@@ -1,23 +1,63 @@
 import SwiftUI
 
 struct DigimonDetails: View {
+    @Environment(\.verticalSizeClass) var sizeClass
     var details: DigimonFullData?
     var body: some View {
-        VStack {
-            Text(getDigimonName())
-            AsyncImage(url: URL(string: getImageURL())) {image in image.resizable()}
-        placeholder: {
-            ProgressView()
-        }
-        .clipShape(Circle())
-        .overlay(
-            Circle().stroke(
-                .green,
-                lineWidth: 4))
-        .shadow(radius: 7)
-        .frame(width: 200, height: 200)
-            Text("Attribute: " + getDigimonAttribute())
-            Text("Level: " + getDigimonLevel())
+        if sizeClass == .compact {
+            ZStack {
+                VStack {
+                    Text(getDigimonName())
+                        .font(.custom("PixelDigivolve", size: 22))
+                        .foregroundColor(Color.black)
+                    AsyncImage(url: URL(string: getImageURL())) {image in image.resizable()}
+                placeholder: {
+                    ProgressView()
+                }
+                .clipShape(Circle())
+                .overlay(
+                    Circle().stroke(
+                        .green,
+                        lineWidth: 4))
+                .shadow(radius: 7)
+                .frame(width: 200, height: 200)
+                    Text("Attribute: " + getDigimonAttribute())
+                        .font(.custom("PixelDigivolve", size: 18))
+                        .foregroundColor(Color.black)
+                    Text("Level: " + getDigimonLevel())
+                        .font(.custom("PixelDigivolve", size: 18))
+                        .foregroundColor(Color.black)
+                }
+            }
+        } else {
+            ZStack {
+                Image("background2")
+                    .resizable()
+                    .ignoresSafeArea()
+                    .scaledToFill()
+                VStack {
+                    Text(getDigimonName())
+                        .font(.custom("PixelDigivolve", size: 22))
+                        .foregroundColor(Color("detail-text"))
+                    AsyncImage(url: URL(string: getImageURL())) {image in image.resizable()}
+                placeholder: {
+                    ProgressView()
+                }
+                .clipShape(Circle())
+                .overlay(
+                    Circle().stroke(
+                        .green,
+                        lineWidth: 4))
+                .shadow(radius: 7)
+                .frame(width: 200, height: 200)
+                    Text("Attribute: " + getDigimonAttribute())
+                        .font(.custom("PixelDigivolve", size: 18))
+                        .foregroundColor(Color("detail-text"))
+                    Text("Level: " + getDigimonLevel())
+                        .font(.custom("PixelDigivolve", size: 18))
+                        .foregroundColor(Color("detail-text"))
+                }
+            }
         }
     }
     

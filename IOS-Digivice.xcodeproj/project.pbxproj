@@ -15,6 +15,8 @@
 		D60632A629D596F600FEAFB5 /* DigimonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60632A529D596F600FEAFB5 /* DigimonDetails.swift */; };
 		D60632AA29D5AC2600FEAFB5 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60632A929D5AC2600FEAFB5 /* DescriptionView.swift */; };
 		D60632AC29D5B18F00FEAFB5 /* DescriptionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60632AB29D5B18F00FEAFB5 /* DescriptionButtonView.swift */; };
+		D636762A29D70A190021693C /* Pixel-Digivolve.otf in Resources */ = {isa = PBXBuildFile; fileRef = D636762829D70A190021693C /* Pixel-Digivolve.otf */; };
+		D636762B29D70A190021693C /* Pixel-Digivolve-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D636762929D70A190021693C /* Pixel-Digivolve-Italic.otf */; };
 		D638C86829CAFC84003A3628 /* IOS_DigiviceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */; };
 		D638C86C29CAFC85003A3628 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D638C86B29CAFC85003A3628 /* Assets.xcassets */; };
 		D638C87029CAFC85003A3628 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D638C86F29CAFC85003A3628 /* Preview Assets.xcassets */; };
@@ -54,6 +56,9 @@
 		D60632A529D596F600FEAFB5 /* DigimonDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigimonDetails.swift; sourceTree = "<group>"; };
 		D60632A929D5AC2600FEAFB5 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		D60632AB29D5B18F00FEAFB5 /* DescriptionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionButtonView.swift; sourceTree = "<group>"; };
+		D636762529D706D20021693C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D636762829D70A190021693C /* Pixel-Digivolve.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pixel-Digivolve.otf"; sourceTree = "<group>"; };
+		D636762929D70A190021693C /* Pixel-Digivolve-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pixel-Digivolve-Italic.otf"; sourceTree = "<group>"; };
 		D638C86429CAFC84003A3628 /* IOS-Digivice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-Digivice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_DigiviceApp.swift; sourceTree = "<group>"; };
 		D638C86B29CAFC85003A3628 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D636762029D7067D0021693C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D636762929D70A190021693C /* Pixel-Digivolve-Italic.otf */,
+				D636762829D70A190021693C /* Pixel-Digivolve.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		D638C85B29CAFC84003A3628 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +133,8 @@
 		D638C86629CAFC84003A3628 /* IOS-Digivice */ = {
 			isa = PBXGroup;
 			children = (
+				D636762529D706D20021693C /* Info.plist */,
+				D636762029D7067D0021693C /* Fonts */,
 				D67DD17229D1C57000ADF5F8 /* View */,
 				D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */,
 				D638C86B29CAFC85003A3628 /* Assets.xcassets */,
@@ -285,6 +301,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D636762B29D70A190021693C /* Pixel-Digivolve-Italic.otf in Resources */,
+				D636762A29D70A190021693C /* Pixel-Digivolve.otf in Resources */,
 				D638C87029CAFC85003A3628 /* Preview Assets.xcassets in Resources */,
 				D638C86C29CAFC85003A3628 /* Assets.xcassets in Resources */,
 			);
@@ -481,12 +499,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"IOS-Digivice/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "IOS-Digivice/Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -517,12 +537,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"IOS-Digivice/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "IOS-Digivice/Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -6,17 +6,21 @@ struct HomeView: View {
     let expKey = "exp"
     var body: some View {
         NavigationView {
-            List {
-                ForEach(digimonList ?? [], id: \DigimonData.id) {digimon in
-                    NavigationLink(destination: DetailView(digimonId: digimon.id)) {
-                        DigimonListItem(digimon: digimon)
+            ZStack {
+                Color.green.edgesIgnoringSafeArea(.all)
+                List {
+                    ForEach(digimonList ?? [], id: \DigimonData.id) {digimon in
+                        NavigationLink(destination: DetailView(digimonId: digimon.id)) {
+                            DigimonListItem(digimon: digimon)
+                        }
+                    }
+                    NavigationLink(destination: FavoriteView()){
+                        Text("Favorite")
                     }
                 }
-                NavigationLink(destination: FavoriteView()){
-                    Text("Favorite")
-                }
+    
             }
-        }.onAppear(perform: loadData)
+            }.onAppear(perform: loadData)
     }
     
     func loadData() {

@@ -10,7 +10,7 @@ struct DigimonListItem: View {
                 ProgressView()
             }
             .frame(width: 100, height: 100)
-            
+            .scaledToFit()
             Text(digimon.name)
         }
     }
