@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D03A04C229D6E01F001E64B1 /* DigilutionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A04C129D6E01F001E64B1 /* DigilutionsView.swift */; };
 		D03A04C429D6E527001E64B1 /* EditFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A04C329D6E527001E64B1 /* EditFavoriteView.swift */; };
 		D0FAE3F429D59CEC00B7F01C /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAE3F329D59CEC00B7F01C /* FavoriteView.swift */; };
 		D0FAE3F629D5AA3C00B7F01C /* ExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAE3F529D5AA3C00B7F01C /* ExperienceView.swift */; };
@@ -47,7 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D03A04C129D6E01F001E64B1 /* DigilutionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigilutionsView.swift; sourceTree = "<group>"; };
 		D03A04C329D6E527001E64B1 /* EditFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFavoriteView.swift; sourceTree = "<group>"; };
 		D0FAE3F329D59CEC00B7F01C /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		D0FAE3F529D5AA3C00B7F01C /* ExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceView.swift; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 				D60632A929D5AC2600FEAFB5 /* DescriptionView.swift */,
 				D60632AB29D5B18F00FEAFB5 /* DescriptionButtonView.swift */,
 				D0FAE3F529D5AA3C00B7F01C /* ExperienceView.swift */,
-				D03A04C129D6E01F001E64B1 /* DigilutionsView.swift */,
 				D03A04C329D6E527001E64B1 /* EditFavoriteView.swift */,
 			);
 			path = Component;
@@ -327,7 +324,6 @@
 				D0FAE3F429D59CEC00B7F01C /* FavoriteView.swift in Sources */,
 				D0FAE3F629D5AA3C00B7F01C /* ExperienceView.swift in Sources */,
 				D638C86829CAFC84003A3628 /* IOS_DigiviceApp.swift in Sources */,
-				D03A04C229D6E01F001E64B1 /* DigilutionsView.swift in Sources */,
 				D60632AA29D5AC2600FEAFB5 /* DescriptionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

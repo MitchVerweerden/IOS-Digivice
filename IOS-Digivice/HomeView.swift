@@ -21,7 +21,9 @@ struct HomeView: View {
     
     func loadData() {
         var digimonList: DigimonList?
-        guard let url = URL(string: "https://www.digi-api.com/api/v1/digimon?page=0")
+        let randomInt = Int.random(in: 0..<10)
+                
+        guard let url = URL(string: "https://www.digi-api.com/api/v1/digimon?page=\(randomInt)")
         else {
             print("Error: failed to construct a URL from string")
             return
