@@ -26,16 +26,25 @@ struct DigimonDetails: View {
     }
     
     func getDigimonName() -> String {
-        return details?.name ?? "Kerel"
+        return details?.name ?? "No Digimon found"
     }
     
     func getDigimonAttribute() -> String {
+        if let hasNoAttributes = details?.attributes.isEmpty, hasNoAttributes {
+            return "unknown"
+        } else {
+            return details?.attributes[0].attribute ?? "unknown"
+        }
         
-        return details?.attributes[0].attribute ?? "Man"
     }
     
     func getDigimonLevel() -> String {
-        return details?.levels[0].level ?? "Champion"
+        if let hasNoLevels = details?.attributes.isEmpty, hasNoLevels {
+            return "unknown"
+        } else {
+            return details?.levels[0].level ?? "unknown"
+        }
+
     }
 
 }
