@@ -11,8 +11,10 @@
 		D60632A629D596F600FEAFB5 /* DigimonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60632A529D596F600FEAFB5 /* DigimonDetails.swift */; };
 		D60632AA29D5AC2600FEAFB5 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60632A929D5AC2600FEAFB5 /* DescriptionView.swift */; };
 		D60632AC29D5B18F00FEAFB5 /* DescriptionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60632AB29D5B18F00FEAFB5 /* DescriptionButtonView.swift */; };
+		D0FAE3F429D59CEC00B7F01C /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAE3F329D59CEC00B7F01C /* FavoriteView.swift */; };
+		D0FAE3F629D5AA3C00B7F01C /* ExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAE3F529D5AA3C00B7F01C /* ExperienceView.swift */; };
+		D0FAE3F829D5CCFB00B7F01C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FAE3F729D5CCFB00B7F01C /* ContentView.swift */; };
 		D638C86829CAFC84003A3628 /* IOS_DigiviceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */; };
-		D638C86A29CAFC84003A3628 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C86929CAFC84003A3628 /* ContentView.swift */; };
 		D638C86C29CAFC85003A3628 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D638C86B29CAFC85003A3628 /* Assets.xcassets */; };
 		D638C87029CAFC85003A3628 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D638C86F29CAFC85003A3628 /* Preview Assets.xcassets */; };
 		D638C87A29CAFC85003A3628 /* IOS_DigiviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C87929CAFC85003A3628 /* IOS_DigiviceTests.swift */; };
@@ -47,9 +49,11 @@
 		D60632A529D596F600FEAFB5 /* DigimonDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigimonDetails.swift; sourceTree = "<group>"; };
 		D60632A929D5AC2600FEAFB5 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		D60632AB29D5B18F00FEAFB5 /* DescriptionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionButtonView.swift; sourceTree = "<group>"; };
+		D0FAE3F329D59CEC00B7F01C /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		D0FAE3F529D5AA3C00B7F01C /* ExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceView.swift; sourceTree = "<group>"; };
+		D0FAE3F729D5CCFB00B7F01C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D638C86429CAFC84003A3628 /* IOS-Digivice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-Digivice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_DigiviceApp.swift; sourceTree = "<group>"; };
-		D638C86929CAFC84003A3628 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D638C86B29CAFC85003A3628 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D638C86D29CAFC85003A3628 /* IOS_Digivice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IOS_Digivice.entitlements; sourceTree = "<group>"; };
 		D638C86F29CAFC85003A3628 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -115,13 +119,14 @@
 			children = (
 				D67DD17229D1C57000ADF5F8 /* View */,
 				D638C86729CAFC84003A3628 /* IOS_DigiviceApp.swift */,
-				D638C86929CAFC84003A3628 /* ContentView.swift */,
 				D638C86B29CAFC85003A3628 /* Assets.xcassets */,
 				D638C86D29CAFC85003A3628 /* IOS_Digivice.entitlements */,
 				D638C86E29CAFC85003A3628 /* Preview Content */,
 				D638C89229CB0725003A3628 /* DigimonAPI.swift */,
 				D638C89429CB0A57003A3628 /* HomeView.swift */,
 				D6D0287B29D5754A00A27E00 /* SplashView.swift */,
+				D0FAE3F329D59CEC00B7F01C /* FavoriteView.swift */,
+				D0FAE3F729D5CCFB00B7F01C /* ContentView.swift */,
 				D6D0287F29D5883B00A27E00 /* FavoriteView.swift */,
 				D60632A329D58CC400FEAFB5 /* DetailView.swift */,
 			);
@@ -168,6 +173,7 @@
 				D60632A529D596F600FEAFB5 /* DigimonDetails.swift */,
 				D60632A929D5AC2600FEAFB5 /* DescriptionView.swift */,
 				D60632AB29D5B18F00FEAFB5 /* DescriptionButtonView.swift */,
+				D0FAE3F529D5AA3C00B7F01C /* ExperienceView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -305,12 +311,15 @@
 				D6D0287C29D5754A00A27E00 /* SplashView.swift in Sources */,
 				D60632A429D58CC400FEAFB5 /* DetailView.swift in Sources */,
 				D67DD17529D1C59B00ADF5F8 /* DigimonListItem.swift in Sources */,
+				D0FAE3F829D5CCFB00B7F01C /* ContentView.swift in Sources */,
 				D6D0288029D5883B00A27E00 /* FavoriteView.swift in Sources */,
 				D60632AC29D5B18F00FEAFB5 /* DescriptionButtonView.swift in Sources */,
 				D60632A629D596F600FEAFB5 /* DigimonDetails.swift in Sources */,
 				D638C86A29CAFC84003A3628 /* ContentView.swift in Sources */,
 				D638C89529CB0A57003A3628 /* HomeView.swift in Sources */,
 				D638C89329CB0725003A3628 /* DigimonAPI.swift in Sources */,
+				D0FAE3F429D59CEC00B7F01C /* FavoriteView.swift in Sources */,
+				D0FAE3F629D5AA3C00B7F01C /* ExperienceView.swift in Sources */,
 				D638C86829CAFC84003A3628 /* IOS_DigiviceApp.swift in Sources */,
 				D60632AA29D5AC2600FEAFB5 /* DescriptionView.swift in Sources */,
 			);

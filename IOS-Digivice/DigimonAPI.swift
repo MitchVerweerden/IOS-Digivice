@@ -10,7 +10,6 @@ struct DigimonData: Codable {
     var image: String
     var href: String
 }
-
 struct DigimonFullData: Codable {
     var id: Int
     var name: String
@@ -18,16 +17,20 @@ struct DigimonFullData: Codable {
     var descriptions: [Description]
     var attributes: [Attribute]
     var levels: [Level]
+    var nextEvolutions: [Evolution]
 }
 
-struct Level: Codable {
+
+struct Experience: Codable{
+    var exp: Float
+}
+
+struct Level: Codable{
     var id: Int
     var level: String
 }
-
-struct DigimonImage: Codable {
-    var href: String
-}
+struct DigimonImage: Codable{
+    var href: String}
 struct Attribute: Codable{
     var id: Int
     var attribute: String
@@ -38,4 +41,7 @@ struct Description: Codable{
     var description: String
 }
 
+struct Evolution: Codable{
+    var id: Int
+}
 
