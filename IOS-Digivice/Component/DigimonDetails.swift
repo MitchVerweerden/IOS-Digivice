@@ -84,9 +84,9 @@ struct DigimonDetails: View {
         } else {
             return details?.levels[0].level ?? "unknown"
         }
-
+        
     }
-
+    
 }
 
 struct DigimonDetails_Previews: PreviewProvider {

@@ -23,7 +23,6 @@ struct DetailView: View {
         } else {
             VStack {
                 DigimonDetails(details: details)
-                
                 TabView {
                     DescriptionView(details: details)
                         .tabItem{
@@ -39,6 +38,7 @@ struct DetailView: View {
         }
     }
     
+    // Async API-call to get the selected Digimon's info
     func loadData() {
         var newDetails: DigimonFullData?
         guard let url = URL(string: "https://www.digi-api.com/api/v1/digimon/" + String(digimonId) )
