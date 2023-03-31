@@ -42,7 +42,7 @@ struct DetailView: View {
     
     func loadData() {
         var newDetails: DigimonFullData?
-        guard let url = URL(string: "https://www.digi-api.com/api/v1/digimon/" + String(digimonId))
+        guard let url = URL(string: "https://www.digi-api.com/api/v1/digimon/" + String(digimonId) )
         else {
             print("Error: failed to construct a URL from string")
             return
@@ -58,6 +58,7 @@ struct DetailView: View {
                 print("Error: failed to get data from URLSession")
                 return
             }
+ 
             do {
                 newDetails = try
                 JSONDecoder().decode(DigimonFullData?.self, from: data)

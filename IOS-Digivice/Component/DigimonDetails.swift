@@ -30,6 +30,7 @@ struct DigimonDetails: View {
     }
     
     func getDigimonAttribute() -> String {
+        
         return details?.attributes[0].attribute ?? "Man"
     }
     

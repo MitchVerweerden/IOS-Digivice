@@ -4,17 +4,47 @@ struct FavoriteView: View {
     @State var digimon: DigimonFullData?
     @State var progressValue: Float = 0.0
     @State var buttonText: String = "Train Digimon"
+    @State private var digivolveAlert = false
+    @State private var editAlert = false
+    @State var name: String = ""
     let favoriteKey = "favorite"
     let expKey = "exp"
     var body: some View {
         VStack {
-            Text(self.digimon?.name ?? "leeg")
-            ExperienceView(value: $progressValue).frame(height: 20)
-            Button(action: {
-                self.trainDigimon()
-            }) {
-                Text(buttonText)
-            }.padding()
+            DigimonDetails(details: digimon)
+            
+            TabView {
+                DescriptionView(details: digimon)
+                    .tabItem{
+                        Label("Description", systemImage: "books.vertical")
+                    }
+                VStack{
+                    ExperienceView(value: $progressValue).frame(height: 20)
+                    Button(action: {
+                        self.trainDigimon()
+                    }) {
+                        Text(buttonText)
+                    }.padding()
+                    Button("Edit Name") {
+                        editAlert = true
+                    }
+                    .alert("Edit Name", isPresented: $editAlert, actions: {
+                        TextField("Name", text: $name)
+                        Button("Save", action: {
+                            saveChanges()
+                        })
+                    }, message: {
+                        Text("Fill in the new name")
+                    })
+                }
+                .alert(isPresented: $digivolveAlert,
+                       content:{Alert(title:Text("Digimon can't digivolve"))})
+                .tabItem{
+                    Label("Actions", systemImage: "network")
+                }
+                
+            }
+            
         }
         .padding()
         .onAppear(perform: loadData)
@@ -43,9 +73,14 @@ struct FavoriteView: View {
             }
             
         }else{
-            digivolve(digimonId: self.digimon?.nextEvolutions[0].id ?? 1)
+            if let hasNoNextEvolutions = digimon?.nextEvolutions.isEmpty, hasNoNextEvolutions {
+                digivolveAlert = true
+            } else {
+                digivolve(digimonId: self.digimon?.nextEvolutions[0].id ?? 1)
+            }
+            
         }
-      
+        
     }
     func digivolve(digimonId: Int){
         var newDigimon: DigimonFullData?
@@ -88,10 +123,11 @@ struct FavoriteView: View {
         task.resume()
         self.buttonText = "Train"
     }
-    
-    struct FavoriteView_Previews: PreviewProvider {
-        static var previews: some View {
-            FavoriteView()
+    func saveChanges(){
+        self.digimon?.name = name
+        if let encodedDigimon = try? JSONEncoder().encode(self.digimon) {
+            UserDefaults.standard.set(encodedDigimon, forKey: favoriteKey)
         }
     }
+    
 }
