@@ -3,7 +3,6 @@ import SwiftUI
 struct DetailView: View {
     @State var digimonId: Int
     @State var details: DigimonFullData?
-    @Environment(\.dynamicTypeSize) var typeSize
     @Environment(\.verticalSizeClass) var sizeClass
     var body: some View {
         if sizeClass == .compact {
@@ -13,31 +12,31 @@ struct DetailView: View {
                     DescriptionView(details: details)
                         .tabItem{
                             Label("Description", systemImage: "books.vertical")
-                        }
+                        }.toolbarBackground(Color("item-background"), for: .automatic)
                     DescriptionButtonView(details: details)
                         .tabItem{
                             Label("Actions", systemImage: "exclamationmark")
-                        }
+                        }.toolbarBackground(Color("item-background"), for: .automatic)
                 }.edgesIgnoringSafeArea(.all)
             }.onAppear(perform: loadData)
             
         } else {
             VStack {
                 DigimonDetails(details: details)
+                
                 TabView {
                     DescriptionView(details: details)
                         .tabItem{
                             Label("Description", systemImage: "books.vertical")
-                        }
+                        }.toolbarBackground(Color("item-background"), for: .automatic)
                     DescriptionButtonView(details: details)
                         .tabItem{
                             Label("Actions", systemImage: "exclamationmark")
-                        }
+                        }.toolbarBackground(Color("item-background"), for: .automatic)
                 }.edgesIgnoringSafeArea(.all)
+                    
             }.onAppear(perform: loadData)
         }
-        
-        
     }
     
     func loadData() {

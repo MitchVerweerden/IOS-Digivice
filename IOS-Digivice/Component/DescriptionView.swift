@@ -10,16 +10,16 @@ import SwiftUI
 struct DescriptionView: View {
     var details: DigimonFullData?
     var body: some View {
-        ScrollView {
-            VStack{
-                Text(getDigimonDescription())
-                    .padding([.horizontal, .top], 15)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-        }
-        
-        
-        
+            ScrollView {
+                VStack{
+                    Text(getDigimonDescription())
+                        .padding([.horizontal, .vertical], 25)
+                        .background(Color("item-background"))
+                        .border(Color("description-text"), width: 8)
+                        .font(.custom("PixelDigivolve", size: 14))
+                        .foregroundColor(Color("description-text"))
+                }
+            }.edgesIgnoringSafeArea(.top)
     }
     
     
