@@ -20,11 +20,11 @@ struct HomeView: View {
                             .foregroundColor(Color.black)
                     }
                 }
-    
             }
             }.onAppear(perform: loadData)
     }
     
+    // Async API-call to fill the list of Digimon
     func loadData() {
         var digimonList: DigimonList?
         let randomInt = Int.random(in: 0..<10)
