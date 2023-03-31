@@ -1,55 +1,97 @@
 import SwiftUI
 
 struct FavoriteView: View {
+    @Environment(\.verticalSizeClass) var sizeClass
     @State var digimon: DigimonFullData?
     @State var progressValue: Float = 0.0
     @State var buttonText: String = "Train Digimon"
     @State private var digivolveAlert = false
     @State private var editAlert = false
     @State var name: String = ""
+    
     let favoriteKey = "favorite"
     let expKey = "exp"
     var body: some View {
-        VStack {
-            DigimonDetails(details: digimon)
-            
-            TabView {
-                DescriptionView(details: digimon)
-                    .tabItem{
-                        Label("Description", systemImage: "books.vertical")
-                    }
-                VStack{
-                    ExperienceView(value: $progressValue).frame(height: 20)
-                    Button(action: {
-                        self.trainDigimon()
-                    }) {
-                        Text(buttonText)
-                    }.padding()
-                    Button("Edit Name") {
-                        editAlert = true
-                    }
-                    .alert("Edit Name", isPresented: $editAlert, actions: {
-                        TextField("Name", text: $name)
-                        Button("Save", action: {
-                            saveChanges()
+        if sizeClass == .compact {
+            HStack {
+                DigimonDetails(details: digimon)
+                TabView {
+                    DescriptionView(details: digimon)
+                        .tabItem{
+                            Label("Description", systemImage: "books.vertical")
+                        }
+                    VStack{
+                        ExperienceView(value: $progressValue).frame(height: 20)
+                        Button(action: {
+                            self.trainDigimon()
+                        }) {
+                            Text(buttonText)
+                        }.padding()
+                        Button("Edit Name") {
+                            editAlert = true
+                        }
+                        .alert("Edit Name", isPresented: $editAlert, actions: {
+                            TextField("Name", text: $name)
+                            Button("Save", action: {
+                                saveChanges()
+                            })
+                        }, message: {
+                            Text("Fill in the new name")
                         })
-                    }, message: {
-                        Text("Fill in the new name")
-                    })
-                }
-                .alert(isPresented: $digivolveAlert,
-                       content:{Alert(title:Text("Digimon can't digivolve"))})
-                .tabItem{
-                    Label("Actions", systemImage: "network")
-                }
+                    }
+                    .alert(isPresented: $digivolveAlert,
+                           content:{Alert(title:Text("Digimon can't digivolve"))})
+                    .tabItem{
+                        Label("Actions", systemImage: "network")
+                    }
+                    
+                }.edgesIgnoringSafeArea(.all)
+            }.onAppear(perform: loadData)
+            
+        } else {
+            VStack {
+                DigimonDetails(details: digimon)
+                TabView {
+                    DescriptionView(details: digimon)
+                        .tabItem{
+                            Label("Description", systemImage: "books.vertical")
+                        }
+                    VStack{
+                        ExperienceView(value: $progressValue).frame(height: 20)
+                        Button(action: {
+                            self.trainDigimon()
+                        }) {
+                            Text(buttonText)
+                        }.padding()
+                        Button("Edit Name") {
+                            editAlert = true
+                        }
+                        .alert("Edit Name", isPresented: $editAlert, actions: {
+                            TextField("Name", text: $name)
+                            Button("Save", action: {
+                                saveChanges()
+                            })
+                        }, message: {
+                            Text("Fill in the new name")
+                        })
+                    }
+                    .alert(isPresented: $digivolveAlert,
+                           content:{Alert(title:Text("Digimon can't digivolve"))})
+                    .tabItem{
+                        Label("Actions", systemImage: "network")
+                    }
+                    
+                }.edgesIgnoringSafeArea(.all)
                 
             }
-            
+            .padding()
+            .onAppear(perform: loadData)
         }
-        .padding()
-        .onAppear(perform: loadData)
+    
+        
     }
     func loadData() {
+        // gets digimon and experience from user defailts
         if let digimonData = UserDefaults.standard.object(forKey: favoriteKey) as? Data,
            let newDigimon = try? JSONDecoder().decode(DigimonFullData.self, from: digimonData) {
             self.digimon = newDigimon
@@ -61,9 +103,12 @@ struct FavoriteView: View {
         }
     }
     func trainDigimon() {
+        
         if(self.progressValue < 1){
             
-            for _ in 0...10 {
+            if sizeClass == .compact {
+                self.progressValue += 0.2
+            }else{
                 self.progressValue += 0.020
             }
             if let encoded = try? JSONEncoder().encode(self.progressValue) {
@@ -124,7 +169,7 @@ struct FavoriteView: View {
             }
         }
         task.resume()
-        self.buttonText = "Train"
+        self.buttonText = "Train Digimon"
     }
     func saveChanges(){
         self.digimon?.name = name
