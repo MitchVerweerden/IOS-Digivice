@@ -106,11 +106,8 @@ struct FavoriteView: View {
         
         if(self.progressValue < 1){
             
-            if sizeClass == .compact {
-                self.progressValue += 0.2
-            }else{
-                self.progressValue += 0.020
-            }
+            self.progressValue += 0.19
+          
             if let encoded = try? JSONEncoder().encode(self.progressValue) {
                 UserDefaults.standard.set(encoded, forKey: expKey)
             }
