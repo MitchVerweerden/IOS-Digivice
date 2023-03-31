@@ -11,15 +11,24 @@ struct DescriptionView: View {
     var details: DigimonFullData?
     var body: some View {
         ScrollView {
-            Text(getDigimonDescription())
-                .padding([.horizontal, .top], 15)
+            VStack{
+                Text(getDigimonDescription())
+                    .padding([.horizontal, .top], 15)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
         }
-        .border(Color.green, width: 2)
+        
+        
+        
     }
     
     
     func getDigimonDescription() -> String {
-        return details?.descriptions[0].description ?? "Mooi ding"
+        if let desc = details?.descriptions.first(where: {$0.language == "en_us"}) {
+            return desc.description
+        } else {
+            return "No description"
+        }
     }
 }
 
