@@ -16,6 +16,8 @@ struct HomeView: View {
                     }
                     NavigationLink(destination: FavoriteView()){
                         Text("Favorite")
+                            .font(.custom("PixelDigivolve", size: 15))
+                            .foregroundColor(Color.black)
                     }
                 }
     

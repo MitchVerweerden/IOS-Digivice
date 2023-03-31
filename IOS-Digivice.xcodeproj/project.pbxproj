@@ -27,7 +27,6 @@
 		D638C89529CB0A57003A3628 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638C89429CB0A57003A3628 /* HomeView.swift */; };
 		D67DD17529D1C59B00ADF5F8 /* DigimonListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DD17429D1C59B00ADF5F8 /* DigimonListItem.swift */; };
 		D6D0287C29D5754A00A27E00 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0287B29D5754A00A27E00 /* SplashView.swift */; };
-		D6D0288029D5883B00A27E00 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0287F29D5883B00A27E00 /* FavoriteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +72,6 @@
 		D638C89429CB0A57003A3628 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D67DD17429D1C59B00ADF5F8 /* DigimonListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigimonListItem.swift; sourceTree = "<group>"; };
 		D6D0287B29D5754A00A27E00 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		D6D0287F29D5883B00A27E00 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +143,6 @@
 				D6D0287B29D5754A00A27E00 /* SplashView.swift */,
 				D0FAE3F329D59CEC00B7F01C /* FavoriteView.swift */,
 				D0FAE3F729D5CCFB00B7F01C /* ContentView.swift */,
-				D6D0287F29D5883B00A27E00 /* FavoriteView.swift */,
 				D60632A329D58CC400FEAFB5 /* DetailView.swift */,
 			);
 			path = "IOS-Digivice";
@@ -334,7 +331,6 @@
 				D60632A429D58CC400FEAFB5 /* DetailView.swift in Sources */,
 				D67DD17529D1C59B00ADF5F8 /* DigimonListItem.swift in Sources */,
 				D0FAE3F829D5CCFB00B7F01C /* ContentView.swift in Sources */,
-				D6D0288029D5883B00A27E00 /* FavoriteView.swift in Sources */,
 				D60632AC29D5B18F00FEAFB5 /* DescriptionButtonView.swift in Sources */,
 				D60632A629D596F600FEAFB5 /* DigimonDetails.swift in Sources */,
 				D638C89529CB0A57003A3628 /* HomeView.swift in Sources */,

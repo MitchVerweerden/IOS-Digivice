@@ -1,9 +1,4 @@
-//
-//  DescriptionView.swift
-//  IOS-Digivice
-//
-//  Created by Mitchell Verweerden on 30/03/2023.
-//
+
 
 import SwiftUI
 

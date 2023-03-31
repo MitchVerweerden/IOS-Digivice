@@ -8,7 +8,6 @@ struct FavoriteView: View {
     @State private var digivolveAlert = false
     @State private var editAlert = false
     @State var name: String = ""
-    
     let favoriteKey = "favorite"
     let expKey = "exp"
     var body: some View {
@@ -19,6 +18,8 @@ struct FavoriteView: View {
                     DescriptionView(details: digimon)
                         .tabItem{
                             Label("Description", systemImage: "books.vertical")
+                                .font(.custom("PixelDigivolve", size: 15))
+                                .foregroundColor(Color.black)
                         }
                     VStack{
                         ExperienceView(value: $progressValue).frame(height: 20)
@@ -55,6 +56,8 @@ struct FavoriteView: View {
                     DescriptionView(details: digimon)
                         .tabItem{
                             Label("Description", systemImage: "books.vertical")
+                                .font(.custom("PixelDigivolve", size: 15))
+                                .foregroundColor(Color.black)
                         }
                     VStack{
                         ExperienceView(value: $progressValue).frame(height: 20)
@@ -76,7 +79,8 @@ struct FavoriteView: View {
                         })
                     }
                     .alert(isPresented: $digivolveAlert,
-                           content:{Alert(title:Text("Digimon can't digivolve"))})
+                           content:{Alert(title:Text("Digimon can't digivolve")    .font(.custom("PixelDigivolve", size: 15))
+                            .foregroundColor(Color.black))})
                     .tabItem{
                         Label("Actions", systemImage: "network")
                     }
@@ -103,22 +107,27 @@ struct FavoriteView: View {
         }
     }
     func trainDigimon() {
-        
+        //check if progressbar isnt full
         if(self.progressValue < 1){
             
+            //add experience
             self.progressValue += 0.19
           
+            //save the new experience in UserDefaults
             if let encoded = try? JSONEncoder().encode(self.progressValue) {
                 UserDefaults.standard.set(encoded, forKey: expKey)
             }
+            //If the progresbar is full change the text to Digivolve because the same button will do somehting else
             if(self.progressValue > 1){
                 self.buttonText = "Digivolve"
             }
             
         }else{
+            //if the progressbar is full check if the current digimon has Next evolutions
             if let hasNoNextEvolutions = digimon?.nextEvolutions.isEmpty, hasNoNextEvolutions {
                 digivolveAlert = true
             } else {
+                //if the current digimon does infact have a next evolution, generate a random id from the list and digivolve that digimon
                 guard let evolutionsLength = self.digimon?.nextEvolutions.count else { return  }
                 let randomInt = Int.random(in: 0..<evolutionsLength)
                 digivolve(digimonId: self.digimon?.nextEvolutions[randomInt].id ?? 1)
@@ -128,7 +137,10 @@ struct FavoriteView: View {
         
     }
     func digivolve(digimonId: Int){
+        //when a digimon has enough experience it will digivolve ie change to another digimon
         var newDigimon: DigimonFullData?
+        
+        //get new digimon from api
         guard let url = URL(string: "https://digimon-api.com/api/v1/digimon/\(digimonId)")
         else {
             print("Error: failed to construct a URL from string")
@@ -146,6 +158,7 @@ struct FavoriteView: View {
                 return
             }
             do {
+                //decode the api return
                 newDigimon = try
                 JSONDecoder().decode(DigimonFullData.self, from: data)
             } catch let error as NSError {
@@ -155,20 +168,23 @@ struct FavoriteView: View {
                 print("Error: failed to read or decode data.")
             }
             DispatchQueue.main.async {
-                //sla op in defaults
+                //save new digimon in UserDefaults
                 if let encodedDigimon = try? JSONEncoder().encode(newDigimon) {
                     UserDefaults.standard.set(encodedDigimon, forKey: favoriteKey)
                 }
                 if let encodedExp = try? JSONEncoder().encode(0.0) {
                     UserDefaults.standard.set(encodedExp, forKey: expKey)
                 }
+                //loadData again so the current digimon is updated
                 loadData()
             }
         }
         task.resume()
+        //change button text because the new digimon has 0 experience
         self.buttonText = "Train Digimon"
     }
     func saveChanges(){
+        //save the name change of the digimon to UserDefaults
         self.digimon?.name = name
         if let encodedDigimon = try? JSONEncoder().encode(self.digimon) {
             UserDefaults.standard.set(encodedDigimon, forKey: favoriteKey)

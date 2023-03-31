@@ -9,10 +9,14 @@ struct EditFavoriteView: View {
       var body: some View {
           VStack(alignment: .leading) {
               TextField("Enter new Name", text: $name)
+                  .font(.custom("PixelDigivolve", size: 15))
+                  .foregroundColor(Color.black)
               Button(action: {
                   self.saveChanges()
               }) {
                   Text("Save changes")
+                      .font(.custom("PixelDigivolve", size: 15))
+                      .foregroundColor(Color.black)
               }.padding()
           }.onAppear(perform: loadData)
       }

@@ -12,6 +12,8 @@ struct DigimonListItem: View {
             .frame(width: 100, height: 100)
             .scaledToFit()
             Text(digimon.name)
+            .font(.custom("PixelDigivolve", size: 15))
+            .foregroundColor(Color.black)
         }
     }
 }
