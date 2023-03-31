@@ -8,7 +8,7 @@ struct HomeView: View {
         NavigationView {
             List {
                 ForEach(digimonList ?? [], id: \DigimonData.id) {digimon in
-                    NavigationLink(destination: DigimonListItem(digimon: digimon)) {
+                    NavigationLink(destination: DetailView(digimonId: digimon.id)) {
                         DigimonListItem(digimon: digimon)
                     }
                     Button("Favorite"){
