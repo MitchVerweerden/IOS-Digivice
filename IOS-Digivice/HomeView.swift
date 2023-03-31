@@ -21,7 +21,7 @@ struct HomeView: View {
     
     func loadData() {
         var digimonList: DigimonList?
-        let randomInt = Int.random(in: 1..<10)
+        let randomInt = Int.random(in: 0..<10)
                 
         guard let url = URL(string: "https://www.digi-api.com/api/v1/digimon?page=\(randomInt)")
         else {
