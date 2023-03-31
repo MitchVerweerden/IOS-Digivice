@@ -31,6 +31,7 @@ struct Level: Codable{
 }
 struct DigimonImage: Codable{
     var href: String}
+
 struct Attribute: Codable{
     var id: Int
     var attribute: String
@@ -42,6 +43,6 @@ struct Description: Codable{
 }
 
 struct Evolution: Codable{
-    var id: Int
+    var id: Int?
 }
 

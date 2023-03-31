@@ -4,17 +4,34 @@ struct FavoriteView: View {
     @State var digimon: DigimonFullData?
     @State var progressValue: Float = 0.0
     @State var buttonText: String = "Train Digimon"
+    @State private var showAlert = false
+    @State var isShowingSheet = false
     let favoriteKey = "favorite"
     let expKey = "exp"
     var body: some View {
         VStack {
-            Text(self.digimon?.name ?? "leeg")
-            ExperienceView(value: $progressValue).frame(height: 20)
-            Button(action: {
-                self.trainDigimon()
-            }) {
-                Text(buttonText)
-            }.padding()
+            DigimonDetails(details: digimon)
+            
+            TabView {
+                DescriptionView(details: digimon)
+                    .tabItem{
+                        Label("Description", systemImage: "books.vertical")
+                    }
+                VStack{
+                    ExperienceView(value: $progressValue).frame(height: 20)
+                    Button(action: {
+                        self.trainDigimon()
+                    }) {
+                        Text(buttonText)
+                    }.padding()
+                }
+                .alert(isPresented: $showAlert,
+                       content:{Alert(title:Text("Digimon can't digivolve"))})
+                .tabItem{
+                    Label("Train", systemImage: "network")
+                }
+            }
+        
         }
         .padding()
         .onAppear(perform: loadData)
@@ -43,7 +60,12 @@ struct FavoriteView: View {
             }
             
         }else{
-            digivolve(digimonId: self.digimon?.nextEvolutions[0].id ?? 1)
+            if let hasNoNextEvolutions = digimon?.nextEvolutions.isEmpty, hasNoNextEvolutions {
+                showAlert = true
+            } else {
+                digivolve(digimonId: self.digimon?.nextEvolutions[0].id ?? 1)
+            }
+        
         }
       
     }
@@ -66,6 +88,8 @@ struct FavoriteView: View {
                 return
             }
             do {
+                let jsonString = String(data: data, encoding: .utf8)
+                print("Raw JSON string: \(jsonString ?? "")")
                 newDigimon = try
                 JSONDecoder().decode(DigimonFullData.self, from: data)
             } catch let error as NSError {
